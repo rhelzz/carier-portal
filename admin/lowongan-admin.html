@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Lowongan - CarierPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .sidebar {
+            min-height: 100vh;
+        }
+        .sidebar-link {
+            transition: all 0.3s ease;
+        }
+        .sidebar-link:hover {
+            background-color: rgba(79, 70, 229, 0.1);
+            border-left: 4px solid #4f46e5;
+        }
+        .sidebar-link.active {
+            background-color: rgba(79, 70, 229, 0.1);
+            border-left: 4px solid #4f46e5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white shadow-lg sidebar">
+            <div class="p-6 border-b">
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="h-10 w-10 bg-indigo-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">P</span>
+                    </div>
+                    <span class="text-xl font-bold text-indigo-600">CarierPro</span>
+                </div>
+                <p class="text-xs text-gray-500">Admin Panel</p>
+            </div>
+
+            <nav class="p-4 space-y-2">
+                <a href="index.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:text-gray-900 font-medium">
+                    <i class="fas fa-chart-line w-5"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="pelamar.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:text-gray-900 font-medium">
+                    <i class="fas fa-users w-5"></i>
+                    <span>Manajemen Pelamar</span>
+                </a>
+                <a href="lowongan-admin.html" class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 font-medium">
+                    <i class="fas fa-briefcase w-5"></i>
+                    <span>Kelola Lowongan</span>
+                </a>
+                <a href="perusahaan-admin.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:text-gray-900 font-medium">
+                    <i class="fas fa-building w-5"></i>
+                    <span>Data Perusahaan</span>
+                </a>
+            </nav>
+
+            <div class="absolute bottom-0 w-64 p-4 border-t">
+                <a href="../login.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-100 font-medium">
+                    <i class="fas fa-sign-out-alt w-5"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8">
+            <!-- Top Bar -->
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Kelola Lowongan</h1>
+                    <p class="text-gray-600 mt-1">Kelola dan pantau semua lowongan pekerjaan yang aktif</p>
+                </div>
+                <button class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 font-medium">
+                    <i class="fas fa-plus mr-2"></i>Tambah Lowongan
+                </button>
+            </div>
+
+            <!-- Lowongan List -->
+            <div class="space-y-4">
+                <!-- Lowongan Card 1 -->
+                <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900">Senior Software Engineer</h3>
+                            <p class="text-gray-600 mt-1">PT. Teknologi Indonesia</p>
+                            <div class="flex gap-6 mt-4 text-sm">
+                                <span class="text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>Jakarta</span>
+                                <span class="text-gray-600"><i class="fas fa-users mr-2 text-indigo-600"></i>324 Pelamar</span>
+                                <span class="text-gray-600"><i class="fas fa-clock mr-2 text-indigo-600"></i>Dibuka 15 hari lalu</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Aktif</span>
+                            <div class="flex gap-2 mt-4">
+                                <button class="px-3 py-1 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 text-sm font-medium">Edit</button>
+                                <button class="px-3 py-1 border border-red-600 text-red-600 rounded-lg hover:bg-red-50 text-sm font-medium">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lowongan Card 2 -->
+                <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900">Data Analyst</h3>
+                            <p class="text-gray-600 mt-1">PT. Finansial Digital</p>
+                            <div class="flex gap-6 mt-4 text-sm">
+                                <span class="text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>Bandung</span>
+                                <span class="text-gray-600"><i class="fas fa-users mr-2 text-indigo-600"></i>287 Pelamar</span>
+                                <span class="text-gray-600"><i class="fas fa-clock mr-2 text-indigo-600"></i>Dibuka 8 hari lalu</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Aktif</span>
+                            <div class="flex gap-2 mt-4">
+                                <button class="px-3 py-1 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 text-sm font-medium">Edit</button>
+                                <button class="px-3 py-1 border border-red-600 text-red-600 rounded-lg hover:bg-red-50 text-sm font-medium">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lowongan Card 3 -->
+                <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900">UI/UX Designer</h3>
+                            <p class="text-gray-600 mt-1">PT. Digital Creative</p>
+                            <div class="flex gap-6 mt-4 text-sm">
+                                <span class="text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>Jakarta</span>
+                                <span class="text-gray-600"><i class="fas fa-users mr-2 text-indigo-600"></i>156 Pelamar</span>
+                                <span class="text-gray-600"><i class="fas fa-clock mr-2 text-indigo-600"></i>Dibuka 5 hari lalu</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">Ditutup</span>
+                            <div class="flex gap-2 mt-4">
+                                <button class="px-3 py-1 border border-green-600 text-green-600 rounded-lg hover:bg-green-50 text-sm font-medium">Buka Ulang</button>
+                                <button class="px-3 py-1 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 text-sm font-medium">Lihat</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lowongan Card 4 -->
+                <div class="bg-white rounded-lg shadow p-6 hover:shadow-lg transition">
+                    <div class="flex justify-between items-start">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-900">HR Manager</h3>
+                            <p class="text-gray-600 mt-1">PT. Sumber Daya Manusia</p>
+                            <div class="flex gap-6 mt-4 text-sm">
+                                <span class="text-gray-600"><i class="fas fa-map-marker-alt mr-2 text-indigo-600"></i>Surabaya</span>
+                                <span class="text-gray-600"><i class="fas fa-users mr-2 text-indigo-600"></i>89 Pelamar</span>
+                                <span class="text-gray-600"><i class="fas fa-clock mr-2 text-indigo-600"></i>Dibuka 20 hari lalu</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">Aktif</span>
+                            <div class="flex gap-2 mt-4">
+                                <button class="px-3 py-1 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 text-sm font-medium">Edit</button>
+                                <button class="px-3 py-1 border border-red-600 text-red-600 rounded-lg hover:bg-red-50 text-sm font-medium">Tutup</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - CarierPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .sidebar {
+            min-height: 100vh;
+        }
+        .sidebar-link {
+            transition: all 0.3s ease;
+        }
+        .sidebar-link:hover {
+            background-color: rgba(79, 70, 229, 0.1);
+            border-left: 4px solid #4f46e5;
+        }
+        .sidebar-link.active {
+            background-color: rgba(79, 70, 229, 0.1);
+            border-left: 4px solid #4f46e5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="w-64 bg-white shadow-lg sidebar">
+            <div class="p-6 border-b">
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="h-10 w-10 bg-indigo-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">P</span>
+                    </div>
+                    <span class="text-xl font-bold text-indigo-600">CarierPro</span>
+                </div>
+                <p class="text-xs text-gray-500">Admin Panel</p>
+            </div>
+
+            <nav class="p-4 space-y-2">
+                <a href="index.html" class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 font-medium">
+                    <i class="fas fa-chart-line w-5"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="pelamar.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:text-gray-900 font-medium">
+                    <i class="fas fa-users w-5"></i>
+                    <span>Manajemen Pelamar</span>
+                </a>
+                <a href="lowongan-admin.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:text-gray-900 font-medium">
+                    <i class="fas fa-briefcase w-5"></i>
+                    <span>Kelola Lowongan</span>
+                </a>
+                <a href="perusahaan-admin.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:text-gray-900 font-medium">
+                    <i class="fas fa-building w-5"></i>
+                    <span>Data Perusahaan</span>
+                </a>
+            </nav>
+
+            <div class="absolute bottom-0 w-64 p-4 border-t">
+                <a href="../login.html" class="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-gray-100 font-medium">
+                    <i class="fas fa-sign-out-alt w-5"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 p-8">
+            <!-- Top Bar -->
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
+                    <p class="text-gray-600 mt-1">Selamat datang di panel admin CarierPro</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <input type="text" placeholder="Cari..." class="px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                    <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+                        HR
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-600 text-sm font-medium">Total Pelamar</p>
+                            <h3 class="text-3xl font-bold text-gray-900 mt-2">1,248</h3>
+                            <p class="text-green-600 text-sm mt-2">↑ 12% dari bulan lalu</p>
+                        </div>
+                        <div class="text-indigo-600 text-3xl">
+                            <i class="fas fa-users"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-600 text-sm font-medium">Lamaran Baru</p>
+                            <h3 class="text-3xl font-bold text-gray-900 mt-2">84</h3>
+                            <p class="text-blue-600 text-sm mt-2">Minggu ini</p>
+                        </div>
+                        <div class="text-blue-600 text-3xl">
+                            <i class="fas fa-inbox"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-600 text-sm font-medium">Rekrutmen Aktif</p>
+                            <h3 class="text-3xl font-bold text-gray-900 mt-2">12</h3>
+                            <p class="text-yellow-600 text-sm mt-2">Lowongan terbuka</p>
+                        </div>
+                        <div class="text-yellow-600 text-3xl">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-600 text-sm font-medium">Diterima</p>
+                            <h3 class="text-3xl font-bold text-gray-900 mt-2">156</h3>
+                            <p class="text-green-600 text-sm mt-2">Bulan ini</p>
+                        </div>
+                        <div class="text-green-600 text-3xl">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Status Lamaran -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Status Lamaran</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Baru</span>
+                                <span class="text-sm font-bold text-indigo-600">45%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-indigo-600 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Sedang Diulas</span>
+                                <span class="text-sm font-bold text-blue-600">30%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-600 h-2 rounded-full" style="width: 30%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Interview</span>
+                                <span class="text-sm font-bold text-yellow-600">15%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-yellow-600 h-2 rounded-full" style="width: 15%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Diterima</span>
+                                <span class="text-sm font-bold text-green-600">10%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-600 h-2 rounded-full" style="width: 10%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Positions -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4">Posisi Paling Diminati</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-4 border-b">
+                            <div>
+                                <p class="font-medium text-gray-900">Software Engineer</p>
+                                <p class="text-sm text-gray-600">324 pelamar</p>
+                            </div>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">High</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b">
+                            <div>
+                                <p class="font-medium text-gray-900">Data Analyst</p>
+                                <p class="text-sm text-gray-600">287 pelamar</p>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">High</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-4 border-b">
+                            <div>
+                                <p class="font-medium text-gray-900">UI/UX Designer</p>
+                                <p class="text-sm text-gray-600">156 pelamar</p>
+                            </div>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-sm font-medium">Medium</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="font-medium text-gray-900">HR Manager</p>
+                                <p class="text-sm text-gray-600">89 pelamar</p>
+                            </div>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">Low</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Applications -->
+            <div class="mt-8 bg-white p-6 rounded-lg shadow">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Lamaran Terbaru</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="border-b">
+                            <tr>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Nama Pelamar</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Posisi</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Tanggal Melamar</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Status</th>
+                                <th class="text-left py-3 px-4 font-semibold text-gray-700">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-3 px-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900">Budi Santoso</p>
+                                        <p class="text-xs text-gray-600">budi@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">Software Engineer</td>
+                                <td class="py-3 px-4">2025-10-28</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">Baru</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <a href="detail-pelamar.html" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">Lihat Detail</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-3 px-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900">Siti Aminah</p>
+                                        <p class="text-xs text-gray-600">siti@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">Data Analyst</td>
+                                <td class="py-3 px-4">2025-10-27</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium">Sedang Diulas</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <a href="detail-pelamar.html" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">Lihat Detail</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-3 px-4">
+                                    <div>
+                                        <p class="font-medium text-gray-900">Riza Pratama</p>
+                                        <p class="text-xs text-gray-600">riza@email.com</p>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4">UI/UX Designer</td>
+                                <td class="py-3 px-4">2025-10-26</td>
+                                <td class="py-3 px-4">
+                                    <span class="px-3 py-1 bg-orange-100 text-orange-800 rounded-full text-xs font-medium">Interview</span>
+                                </td>
+                                <td class="py-3 px-4">
+                                    <a href="detail-pelamar.html" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">Lihat Detail</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-4">
+                    <a href="pelamar.html" class="text-indigo-600 hover:text-indigo-800 font-medium text-sm">Lihat Semua Pelamar →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

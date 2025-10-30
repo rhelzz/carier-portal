@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -15,7 +16,6 @@
             font-family: 'Montserrat', sans-serif;
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -46,15 +46,26 @@
     <!-- Header -->
     <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-3xl md:text-4xl font-bold mb-4">Daftar Sebagai Pencari Kerja</h1>
-            <p class="text-indigo-100 text-lg">Bergabunglah dengan ribuan pencari kerja dan temukan pekerjaan impian Anda</p>
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Daftar CarierPro</h1>
+            <p class="text-indigo-100 text-lg">Pilih jenis pendaftaran yang sesuai dengan Anda</p>
         </div>
     </section>
 
     <!-- Form Section -->
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="bg-white p-8 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-bold text-gray-900 mb-2">Buat Akun Baru</h2>
+        <!-- Tab Toggle -->
+        <div class="flex gap-4 mb-8 bg-white p-2 rounded-lg shadow">
+            <button onclick="switchTab('seeker')" id="tab-seeker" class="flex-1 py-3 px-4 rounded-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-700 transition">
+                <i class="fas fa-user mr-2"></i>Pencari Kerja
+            </button>
+            <button onclick="switchTab('company')" id="tab-company" class="flex-1 py-3 px-4 rounded-lg font-semibold text-gray-600 bg-white border border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition">
+                <i class="fas fa-building mr-2"></i>Perusahaan
+            </button>
+        </div>
+
+        <!-- Pencari Kerja Form -->
+        <div id="form-seeker" class="bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Daftar Sebagai Pencari Kerja</h2>
             <p class="text-gray-600 mb-8">Isi form di bawah untuk membuat akun dan mulai mencari lowongan kerja</p>
 
             <form class="space-y-6">
@@ -183,6 +194,115 @@
             </form>
         </div>
 
+        <!-- Perusahaan Form -->
+        <div id="form-company" class="bg-white p-8 rounded-lg shadow-lg hidden">
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Daftar Sebagai Perusahaan</h2>
+            <p class="text-gray-600 mb-8">Isi form di bawah untuk membuat akun perusahaan dan mulai merekrut talent terbaik</p>
+
+            <form class="space-y-6">
+                <!-- Company Name -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Nama Perusahaan</label>
+                    <input type="text" placeholder="PT. Nama Perusahaan Anda" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                </div>
+
+                <!-- Company Email -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Email Perusahaan</label>
+                    <input type="email" placeholder="hr@perusahaan.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                </div>
+
+                <!-- Company Phone -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Nomor Telepon Perusahaan</label>
+                    <input type="tel" placeholder="02x-xxxx-xxxx" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                </div>
+
+                <!-- Contact Person -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Nama Person yang Bertanggung Jawab</label>
+                    <input type="text" placeholder="Nama lengkap" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                </div>
+
+                <!-- Company Website -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Website Perusahaan</label>
+                    <input type="url" placeholder="https://www.perusahaan.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                </div>
+
+                <!-- Company Size -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Ukuran Perusahaan</label>
+                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                        <option>Pilih ukuran perusahaan</option>
+                        <option>1-50 Karyawan</option>
+                        <option>50-100 Karyawan</option>
+                        <option>100-500 Karyawan</option>
+                        <option>500-1000 Karyawan</option>
+                        <option>1000+ Karyawan</option>
+                    </select>
+                </div>
+
+                <!-- Company Industry -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Industri</label>
+                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                        <option>Pilih industri</option>
+                        <option>IT & Software</option>
+                        <option>Finance & Banking</option>
+                        <option>HR & Consulting</option>
+                        <option>Creative & Design</option>
+                        <option>Retail & Commerce</option>
+                        <option>Logistik & Transport</option>
+                        <option>Lainnya</option>
+                    </select>
+                </div>
+
+                <!-- Company Location -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Lokasi Kantor Pusat</label>
+                    <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                        <option>Pilih kota</option>
+                        <option>Jakarta</option>
+                        <option>Bandung</option>
+                        <option>Surabaya</option>
+                        <option>Medan</option>
+                        <option>Kota lainnya</option>
+                    </select>
+                </div>
+
+                <!-- Password -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Password</label>
+                    <input type="password" placeholder="Masukkan password" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                </div>
+
+                <!-- Confirm Password -->
+                <div>
+                    <label class="block text-sm font-semibold text-gray-900 mb-2">Konfirmasi Password</label>
+                    <input type="password" placeholder="Konfirmasi password Anda" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+                </div>
+
+                <!-- Terms & Conditions -->
+                <div class="flex items-start">
+                    <input type="checkbox" class="w-4 h-4 text-indigo-600 mt-1">
+                    <label class="ml-3 text-sm text-gray-600">
+                        Saya setuju dengan <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Syarat dan Ketentuan</a> serta <a href="#" class="text-indigo-600 hover:text-indigo-800 font-semibold">Kebijakan Privasi</a> CarierPro
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition">
+                    Daftar Perusahaan
+                </button>
+
+                <!-- Login Link -->
+                <p class="text-center text-gray-600">
+                    Sudah punya akun? <a href="login.html" class="text-indigo-600 hover:text-indigo-800 font-semibold">Masuk di sini</a>
+                </p>
+            </form>
+        </div>
+
         <!-- Benefits Section -->
         <div class="mt-12 grid md:grid-cols-3 gap-6">
             <div class="bg-white p-6 rounded-lg shadow text-center">
@@ -250,5 +370,32 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function switchTab(tab) {
+            const tabSeeker = document.getElementById('tab-seeker');
+            const tabCompany = document.getElementById('tab-company');
+            const formSeeker = document.getElementById('form-seeker');
+            const formCompany = document.getElementById('form-company');
+            
+            if (tab === 'seeker') {
+                // Active state for Seeker tab
+                tabSeeker.className = 'flex-1 py-3 px-4 rounded-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-700 transition';
+                tabCompany.className = 'flex-1 py-3 px-4 rounded-lg font-semibold text-gray-600 bg-white border border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition';
+                
+                // Show Seeker form, hide Company form
+                formSeeker.classList.remove('hidden');
+                formCompany.classList.add('hidden');
+            } else if (tab === 'company') {
+                // Active state for Company tab
+                tabCompany.className = 'flex-1 py-3 px-4 rounded-lg font-semibold text-white bg-indigo-600 hover:bg-indigo-700 transition';
+                tabSeeker.className = 'flex-1 py-3 px-4 rounded-lg font-semibold text-gray-600 bg-white border border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition';
+                
+                // Show Company form, hide Seeker form
+                formCompany.classList.remove('hidden');
+                formSeeker.classList.add('hidden');
+            }
+        }
+    </script>
 </body>
 </html>

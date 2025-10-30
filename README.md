@@ -2,9 +2,29 @@
 
 Selamat datang di **CarierPro**, portal karir terpadu yang menghubungkan pencari kerja dengan perusahaan-perusahaan terkemuka di Indonesia.
 
-## 📋 Daftar Halaman
+## 🆕 NEW: Microsoft 365 Integration Ready!
 
-Website ini terdiri dari 8 halaman utama dengan design responsive dan corporate style:
+CarierPro sekarang dilengkapi dengan **Login & Register Flow Microsoft 365** yang siap di-slice ke **SharePoint** dan **Power Platform**!
+
+### ✨ Fitur Terbaru
+- 🔐 **Microsoft 365 Single Sign-On (SSO)** - Flow simulasi login dengan akun Microsoft
+- � **SharePoint-Compatible UI** - Menggunakan Segoe UI dan Microsoft Design Language
+- 🎨 **Power Platform Ready** - Komponen siap diconvert ke Power Apps
+- 🔄 **Multi-Step Registration** - Wizard 3 langkah dengan progress indicator
+- 🔒 **Password Strength Checker** - Real-time validation
+- ✅ **Form Validation** - Client-side validation yang robust
+
+### 📦 File Baru
+- `login.html` - Halaman login dengan Microsoft 365 SSO
+- `register.html` - Halaman registrasi multi-step
+- `SHAREPOINT-GUIDE.md` - Panduan lengkap slicing ke SharePoint
+- `MS365-COMPONENTS.md` - Komponen reusable untuk Power Platform
+
+---
+
+## �📋 Daftar Halaman
+
+Website ini terdiri dari **9 halaman utama** dengan design responsive dan corporate style:
 
 ### 1. **Beranda (index.html)**
 - Hero section dengan call-to-action
@@ -42,19 +62,23 @@ Website ini terdiri dari 8 halaman utama dengan design responsive dan corporate 
 - CTA untuk hubungi support
 - Topik mencakup: Portal Karir, Lowongan, Upload CV, Notifikasi, Dashboard HR, Statistik, Keamanan
 
-### 6. **Masuk (login.html)**
-- Form login dengan email & password
-- Opsi "Ingat Saya" dan "Lupa Password"
-- Social login (Google)
-- Link ke register dan portal perusahaan
-- Design modern dengan gradient background
+### 6. **Masuk (login.html)** ⭐ NEW
+- **Microsoft 365 SSO Flow** dengan modal interaktif
+- Traditional email/password login
+- Password visibility toggle
+- SharePoint-compatible styling
+- Mobile responsive
+- Loading states & animations
+- Link ke halaman register
 
-### 7. **Register (register.html)**
-- Pemilihan jenis akun (Pencari Kerja/Perusahaan)
-- Kartu perbandingan fitur untuk kedua tipe
-- FAQ umum tentang registrasi
-- Benefit dan features unggulan
-- CTA untuk kedua jenis pendaftaran
+### 7. **Daftar Akun (register.html)** ⭐ NEW
+- **Multi-step registration** (3 steps dengan progress indicator)
+- Microsoft 365 quick sign-up option
+- Password strength indicator
+- Form validation real-time
+- Review data sebelum submit
+- Success modal dengan next steps
+- Terms & conditions checkbox
 
 ### 8. **Detail Lowongan (detail-lowongan.html)**
 - Header dengan informasi lowongan dan status
@@ -67,7 +91,72 @@ Website ini terdiri dari 8 halaman utama dengan design responsive dan corporate 
 - Share lowongan ke social media
 - Related jobs suggestions
 
-## 🎨 Fitur Design
+---
+
+## 🚀 Microsoft 365 & SharePoint Integration
+
+### Cara Menggunakan di SharePoint
+
+#### Opsi 1: Embed Langsung (Quick & Simple)
+```html
+1. Upload login.html & register.html ke SharePoint Document Library
+2. Tambahkan Script Editor Web Part ke page
+3. Link ke file HTML Anda
+4. Done! 🎉
+```
+
+#### Opsi 2: Power Apps Integration
+```
+1. Buka Power Apps Studio
+2. Recreate UI menggunakan komponen dari MS365-COMPONENTS.md
+3. Connect ke Office365Users connector untuk SSO
+4. Deploy ke SharePoint sebagai app
+```
+
+#### Opsi 3: SharePoint Framework (SPFx)
+```bash
+1. Extract komponen dari login.html
+2. Convert ke React components
+3. Build SPFx solution
+4. Deploy ke App Catalog
+```
+
+### 📚 Dokumentasi Lengkap
+Lihat file berikut untuk panduan detail:
+- **SHAREPOINT-GUIDE.md** - Tutorial lengkap slicing ke SharePoint & Power Platform
+- **MS365-COMPONENTS.md** - Komponen reusable dan code snippets
+
+### 🎨 Design System
+- **Font**: Segoe UI (SharePoint default)
+- **Color Scheme**: Microsoft Fluent Design
+  - Primary Blue: `#0078d4`
+  - Hover Blue: `#106ebe`
+  - Success Green: `#107c10`
+  - Warning Orange: `#f7630c`
+  - Error Red: `#d13438`
+
+---
+
+## 🔐 Authentication Flow (Simulasi)
+
+### Login Flow
+1. User klik "Masuk dengan Microsoft 365"
+2. Modal muncul dengan input email
+3. Masukkan password Microsoft
+4. Simulasi loading 2 detik
+5. Redirect ke dashboard
+
+### Register Flow
+1. **Step 1**: Input nama, telepon, tipe akun
+2. **Step 2**: Email, password, konfirmasi password
+3. **Step 3**: Review data, accept terms
+4. Submit → Success modal
+5. Email verification (simulasi)
+6. Redirect ke login
+
+> **Note**: Ini adalah halaman **statis untuk demo flow**. Tidak ada integrasi real ke Microsoft 365. Untuk production, gunakan MSAL.js dan Azure AD.
+
+---## 🎨 Fitur Design
 
 ### Tech Stack
 - **HTML5** - Semantic markup

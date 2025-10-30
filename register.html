@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Akun - CarierPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #2c3e50;
+        }
+        
+        /* SharePoint/Power Platform Compatible Styles */
+        .ms-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        
+        .ms-btn-primary {
+            background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+            color: white;
+            border: none;
+        }
+        
+        .ms-btn-primary:hover {
+            background: linear-gradient(135deg, #106ebe 0%, #0a4fa6 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 120, 212, 0.3);
+        }
+        
+        .ms-btn-primary:active {
+            transform: translateY(0);
+        }
+        
+        .ms-btn-secondary {
+            background: #f8f9fa;
+            border: 2px solid #e0e6ed;
+            color: #2c3e50;
+        }
+        
+        .ms-btn-secondary:hover {
+            background: #f0f3f7;
+            border-color: #0078d4;
+            color: #0078d4;
+            transform: translateY(-2px);
+        }
+        
+        .ms-input {
+            border: 2px solid #e0e6ed;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+        
+        .ms-input::placeholder {
+            color: #95a5a6;
+        }
+        
+        .ms-input:focus {
+            outline: none;
+            border-color: #0078d4;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(0, 120, 212, 0.1);
+        }
+        
+        .ms-input:hover:not(:focus) {
+            border-color: #d4e0f7;
+            background-color: white;
+        }
+        
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 28px 0;
+            gap: 1rem;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e0e6ed, transparent);
+        }
+        
+        .divider span {
+            color: #7f8c8d;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        /* Progress Steps */
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            gap: 1rem;
+        }
+        
+        .step-item {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 0;
+        }
+        
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ecf0f1;
+            color: #95a5a6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-item.active .step-circle {
+            background: linear-gradient(135deg, #0078d4 0%, #106ebe 100%);
+            color: white;
+            border-color: #0078d4;
+            box-shadow: 0 4px 15px rgba(0, 120, 212, 0.3);
+            transform: scale(1.05);
+        }
+        
+        .step-item.completed .step-circle {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            border-color: #27ae60;
+        }
+        
+        .step-label {
+            font-size: 13px;
+            color: #7f8c8d;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+        
+        .step-item.active .step-label {
+            color: #0078d4;
+            font-weight: 700;
+        }
+        
+        .step-item.completed .step-label {
+            color: #27ae60;
+        }
+        
+        .step-line {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            right: -50%;
+            height: 2px;
+            background: #ecf0f1;
+            z-index: -1;
+        }
+        
+        .step-item.completed .step-line {
+            background: linear-gradient(90deg, #27ae60 0%, #ecf0f1 100%);
+        }
+        
+        .step-item:last-child .step-line {
+            display: none;
+        }
+        
+        /* Password Strength Indicator */
+        .password-strength {
+            height: 6px;
+            border-radius: 3px;
+            margin-top: 8px;
+            background: #ecf0f1;
+            overflow: hidden;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .password-strength-bar {
+            height: 100%;
+            width: 0%;
+            transition: all 0.4s ease;
+            border-radius: 3px;
+        }
+        
+        .strength-weak { 
+            width: 33%; 
+            background: linear-gradient(90deg, #e74c3c, #c0392b);
+        }
+        .strength-medium { 
+            width: 66%; 
+            background: linear-gradient(90deg, #f39c12, #e67e22);
+        }
+        .strength-strong { 
+            width: 100%; 
+            background: linear-gradient(90deg, #27ae60, #229954);
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(15px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.4s ease;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .form-label .required {
+            color: #e74c3c;
+            margin-left: 2px;
+        }
+
+        .form-text {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 6px;
+            letter-spacing: 0.2px;
+        }
+
+        /* Select Styling */
+        select.ms-input {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230078d4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 20px;
+            padding-right: 40px;
+        }
+
+        /* Password Input Container */
+        .password-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .password-toggle-btn {
+            position: absolute;
+            right: 12px;
+            background: none;
+            border: none;
+            color: #7f8c8d;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 4px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .password-toggle-btn:hover {
+            color: #0078d4;
+        }
+
+        /* Box Styling */
+        .info-box {
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 18px;
+            border: 2px solid;
+            background-color: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .info-box.blue {
+            border-color: #d4e0f7;
+            background-color: rgba(212, 224, 247, 0.3);
+            color: #0066cc;
+        }
+
+        .info-box.yellow {
+            border-color: #fdeeba;
+            background-color: rgba(253, 238, 186, 0.3);
+            color: #856404;
+        }
+
+        .info-box.gray {
+            border-color: #e0e6ed;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+
+        .info-box-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 8px;
+            letter-spacing: 0.3px;
+        }
+
+        .info-box-text {
+            font-size: 13px;
+            line-height: 1.6;
+            letter-spacing: 0.2px;
+        }
+
+        .info-box-list {
+            font-size: 13px;
+            line-height: 1.7;
+            letter-spacing: 0.2px;
+        }
+
+        .info-box-list li {
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 py-8">
+    <!-- Register Container -->
+    <div class="w-full max-w-2xl">
+        <!-- Logo & Brand -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <!-- Logo Section -->
+            <div class="flex justify-center mb-8">
+                <div class="h-16 w-16 bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300">
+                    <span class="text-white font-bold text-3xl">CP</span>
+                </div>
+            </div>
+            
+            <!-- Header -->
+            <div class="text-center mb-10">
+                <h1 class="text-3xl font-bold text-gray-900 mb-2 tracking-tight">Buat Akun CarierPro</h1>
+                <p class="text-center text-gray-600 text-base leading-relaxed">Bergabunglah dengan ribuan pencari kerja dan raih pekerjaan impian Anda</p>
+            </div>
+
+            <!-- Progress Steps -->
+            <div class="step mb-10">
+                <div class="step-item active" id="step1Indicator">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Info Dasar</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-item" id="step2Indicator">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Akun</div>
+                    <div class="step-line"></div>
+                </div>
+                <div class="step-item" id="step3Indicator">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Verifikasi</div>
+                </div>
+            </div>
+
+            <!-- Microsoft 365 Sign Up Button -->
+            <button type="button" onclick="handleMicrosoftSignUp()" class="w-full bg-white border-2 border-gray-200 hover:border-blue-400 hover:bg-blue-50 text-gray-800 font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 shadow-sm hover:shadow-md mb-6 group">
+                <svg width="22" height="22" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg" class="group-hover:scale-110 transition-transform">
+                    <rect width="10" height="10" fill="#F25022"/>
+                    <rect x="11" width="10" height="10" fill="#7FBA00"/>
+                    <rect y="11" width="10" height="10" fill="#00A4EF"/>
+                    <rect x="11" y="11" width="10" height="10" fill="#FFB900"/>
+                </svg>
+                <span>Daftar dengan Microsoft 365</span>
+            </button>
+
+            <div class="divider">
+                <span>atau daftar dengan email</span>
+            </div>
+
+            <!-- Registration Form - Step 1 -->
+            <form id="registerForm" class="space-y-6">
+                <!-- Step 1: Basic Info -->
+                <div id="step1" class="fade-in">
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Nama Depan <span class="required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="firstName"
+                                placeholder="Contoh: John" 
+                                class="ms-input w-full px-4 py-3 rounded-lg text-sm"
+                                required
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">
+                                Nama Belakang <span class="required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="lastName"
+                                placeholder="Contoh: Doe" 
+                                class="ms-input w-full px-4 py-3 rounded-lg text-sm"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-5">
+                        <label class="form-label">
+                            Nomor Telepon <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="tel" 
+                            id="phone"
+                            placeholder="Contoh: 08123456789" 
+                            class="ms-input w-full px-4 py-3 rounded-lg text-sm"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group mt-5">
+                        <label class="form-label">
+                            Jenis Akun <span class="required">*</span>
+                        </label>
+                        <select class="ms-input w-full px-4 py-3 rounded-lg text-sm" id="accountType" required>
+                            <option value="">-- Pilih jenis akun --</option>
+                            <option value="jobseeker">👤 Pencari Kerja</option>
+                            <option value="company">🏢 Perusahaan</option>
+                        </select>
+                    </div>
+
+                    <button type="button" onclick="nextStep(2)" class="ms-btn ms-btn-primary w-full py-3 rounded-lg font-semibold mt-6">
+                        Lanjutkan <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Step 2: Account Details -->
+                <div id="step2" class="hidden fade-in">
+                    <div class="form-group">
+                        <label class="form-label">
+                            Email <span class="required">*</span>
+                        </label>
+                        <input 
+                            type="email" 
+                            id="email"
+                            placeholder="nama@email.com" 
+                            class="ms-input w-full px-4 py-3 rounded-lg text-sm"
+                            required
+                        >
+                        <p class="form-text">Gunakan email aktif untuk verifikasi</p>
+                    </div>
+
+                    <div class="form-group mt-5">
+                        <label class="form-label">
+                            Password <span class="required">*</span>
+                        </label>
+                        <div class="password-input-wrapper">
+                            <input 
+                                type="password" 
+                                id="password"
+                                placeholder="Minimal 8 karakter dengan huruf, angka & simbol" 
+                                class="ms-input w-full px-4 py-3 rounded-lg text-sm"
+                                required
+                                oninput="checkPasswordStrength()"
+                            >
+                            <button type="button" onclick="togglePassword('password', 'toggleIcon1')" class="password-toggle-btn">
+                                <i class="fas fa-eye" id="toggleIcon1"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="password-strength-bar" id="strengthBar"></div>
+                        </div>
+                        <p class="text-xs mt-2" id="strengthText"></p>
+                    </div>
+
+                    <div class="form-group mt-5">
+                        <label class="form-label">
+                            Konfirmasi Password <span class="required">*</span>
+                        </label>
+                        <div class="password-input-wrapper">
+                            <input 
+                                type="password" 
+                                id="confirmPassword"
+                                placeholder="Ketik ulang password" 
+                                class="ms-input w-full px-4 py-3 rounded-lg text-sm"
+                                required
+                            >
+                            <button type="button" onclick="togglePassword('confirmPassword', 'toggleIcon2')" class="password-toggle-btn">
+                                <i class="fas fa-eye" id="toggleIcon2"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 mt-6">
+                        <button type="button" onclick="previousStep(1)" class="ms-btn ms-btn-secondary flex-1 py-3 rounded-lg">
+                            <i class="fas fa-arrow-left mr-2"></i>Kembali
+                        </button>
+                        <button type="button" onclick="nextStep(3)" class="ms-btn ms-btn-primary flex-1 py-3 rounded-lg font-semibold">
+                            Lanjutkan <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Verification & Terms -->
+                <div id="step3" class="hidden fade-in">
+                    <!-- Info Box -->
+                    <div class="info-box blue">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-info-circle text-blue-600 text-lg flex-shrink-0 mt-1"></i>
+                            <div>
+                                <p class="info-box-title">✉️ Verifikasi Email</p>
+                                <p class="info-box-text">Kami akan mengirimkan kode verifikasi 6 digit ke email Anda. Pastikan email sudah benar untuk melanjutkan.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review Info -->
+                    <div class="info-box gray">
+                        <h3 class="info-box-title mb-4">📋 Review Informasi Anda</h3>
+                        <div class="space-y-3 text-sm">
+                            <div class="flex justify-between pb-2 border-b border-gray-300">
+                                <span class="text-gray-600 font-medium">Nama Lengkap:</span>
+                                <span class="font-semibold text-gray-900" id="reviewName">-</span>
+                            </div>
+                            <div class="flex justify-between pb-2 border-b border-gray-300">
+                                <span class="text-gray-600 font-medium">Email:</span>
+                                <span class="font-semibold text-gray-900" id="reviewEmail">-</span>
+                            </div>
+                            <div class="flex justify-between pb-2 border-b border-gray-300">
+                                <span class="text-gray-600 font-medium">Telepon:</span>
+                                <span class="font-semibold text-gray-900" id="reviewPhone">-</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600 font-medium">Tipe Akun:</span>
+                                <span class="font-semibold text-blue-600" id="reviewType">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="space-y-4 mt-6">
+                        <label class="flex items-start cursor-pointer group">
+                            <input type="checkbox" id="termsCheck" class="w-5 h-5 mt-0.5 mr-3 text-blue-600 border-2 border-gray-300 rounded focus:ring-blue-500 transition-all group-hover:border-blue-400" required>
+                            <span class="text-sm text-gray-700 leading-relaxed">
+                                Saya menyetujui <a href="#" class="text-blue-600 font-semibold hover:underline transition-all">Syarat & Ketentuan</a> dan <a href="#" class="text-blue-600 font-semibold hover:underline transition-all">Kebijakan Privasi</a> CarierPro
+                            </span>
+                        </label>
+
+                        <label class="flex items-start cursor-pointer group">
+                            <input type="checkbox" id="newsletterCheck" class="w-5 h-5 mt-0.5 mr-3 text-blue-600 border-2 border-gray-300 rounded focus:ring-blue-500 transition-all group-hover:border-blue-400">
+                            <span class="text-sm text-gray-700 leading-relaxed">
+                                📧 Saya ingin menerima informasi lowongan kerja dan tips karir via email
+                            </span>
+                        </label>
+
+                        <label class="flex items-start cursor-pointer group">
+                            <input type="checkbox" id="ms365Check" class="w-5 h-5 mt-0.5 mr-3 text-blue-600 border-2 border-gray-300 rounded focus:ring-blue-500 transition-all group-hover:border-blue-400">
+                            <span class="text-sm text-gray-700 leading-relaxed">
+                                <i class="fab fa-microsoft text-blue-600"></i> Sinkronkan dengan Microsoft 365 untuk pengalaman lebih baik
+                            </span>
+                        </label>
+                    </div>
+
+                    <div class="flex gap-3 mt-8">
+                        <button type="button" onclick="previousStep(2)" class="ms-btn ms-btn-secondary flex-1 py-3 rounded-lg">
+                            <i class="fas fa-arrow-left mr-2"></i>Kembali
+                        </button>
+                        <button type="submit" class="ms-btn ms-btn-primary flex-1 py-3 rounded-lg font-semibold">
+                            ✓ Daftar Sekarang
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Login Link -->
+            <p class="text-center text-gray-600 text-sm mt-8 pt-6 border-t border-gray-200">
+                Sudah punya akun? <a href="login.html" class="text-blue-600 font-bold hover:text-blue-700 hover:underline transition-all">Masuk di sini</a>
+            </p>
+        </div>
+
+        <!-- Footer Info -->
+        <div class="mt-8 text-center space-y-2">
+            <p class="text-sm text-gray-700 font-medium">
+                <i class="fas fa-shield-alt text-green-600 mr-2"></i>
+                Informasi Anda aman dan terenkripsi dengan SSL
+            </p>
+            <p class="text-xs text-gray-500">
+                © 2025 CarierPro. Didukung oleh Microsoft 365 & Power Platform
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal: Microsoft Sign Up -->
+    <div id="msSignUpModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-fadeIn">
+            <button onclick="closeMsSignUpModal()" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 transition-colors w-8 h-8 flex items-center justify-center hover:bg-red-50 rounded-full">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+            
+            <div class="text-center">
+                <svg width="50" height="50" viewBox="0 0 21 21" class="mx-auto mb-6">
+                    <rect width="10" height="10" fill="#F25022"/>
+                    <rect x="11" width="10" height="10" fill="#7FBA00"/>
+                    <rect y="11" width="10" height="10" fill="#00A4EF"/>
+                    <rect x="11" y="11" width="10" height="10" fill="#FFB900"/>
+                </svg>
+                
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Microsoft 365</h2>
+                <p class="text-gray-600 text-base mb-6">Daftar dengan akun Microsoft perusahaan Anda untuk akses lebih mudah</p>
+                
+                <div class="text-left space-y-4">
+                    <div class="info-box blue">
+                        <div class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-green-600 text-lg flex-shrink-0"></i>
+                            <div>
+                                <p class="info-box-title text-base">✨ Keuntungan Daftar dengan Microsoft 365:</p>
+                                <ul class="info-box-list list-disc ml-5 mt-2 space-y-1.5 text-blue-800">
+                                    <li>⚡ Pendaftaran lebih cepat dan mudah</li>
+                                    <li>📋 Auto-fill profil dari akun Microsoft</li>
+                                    <li>☁️ Integrasi dengan OneDrive untuk CV</li>
+                                    <li>🔐 Single Sign-On (SSO) yang aman</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="proceedMsSignUp()" class="ms-btn ms-btn-primary w-full py-3 rounded-lg font-semibold">
+                        Lanjutkan dengan Microsoft 365
+                    </button>
+                    <button onclick="closeMsSignUpModal()" class="ms-btn ms-btn-secondary w-full py-2 rounded-lg">
+                        Batal
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Success -->
+    <div id="successModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center animate-fadeIn">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <i class="fas fa-check text-4xl text-green-600"></i>
+            </div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-3">Pendaftaran Berhasil! 🎉</h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">Kami telah mengirimkan email verifikasi ke alamat email Anda. Silakan cek inbox atau folder spam Anda.</p>
+            
+            <div class="info-box yellow">
+                <div class="flex items-start gap-3">
+                    <i class="fas fa-tasks text-yellow-600 text-lg flex-shrink-0 mt-0.5"></i>
+                    <div>
+                        <p class="info-box-title">Langkah Selanjutnya:</p>
+                        <ol class="info-box-list list-decimal ml-5 mt-2 space-y-1.5 text-yellow-900">
+                            <li>Buka email dari CarierPro</li>
+                            <li>Klik link verifikasi di email</li>
+                            <li>Lengkapi profil Anda</li>
+                            <li>Mulai cari pekerjaan impian! 🚀</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="goToLogin()" class="ms-btn ms-btn-primary w-full py-3 rounded-lg font-semibold mt-6">
+                Mengerti, Lanjut ke Login
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+
+        // Step Navigation
+        function nextStep(step) {
+            // Validate current step
+            if (currentStep === 1) {
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const phone = document.getElementById('phone').value;
+                const accountType = document.getElementById('accountType').value;
+                
+                if (!firstName || !lastName || !phone || !accountType) {
+                    alert('Mohon lengkapi semua field yang wajib diisi');
+                    return;
+                }
+            }
+            
+            if (currentStep === 2) {
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirmPassword').value;
+                
+                if (!email || !password || !confirmPassword) {
+                    alert('Mohon lengkapi semua field yang wajib diisi');
+                    return;
+                }
+                
+                if (password !== confirmPassword) {
+                    alert('Password dan Konfirmasi Password tidak cocok');
+                    return;
+                }
+                
+                if (password.length < 8) {
+                    alert('Password minimal 8 karakter');
+                    return;
+                }
+                
+                // Update review
+                updateReview();
+            }
+            
+            // Hide current step
+            document.getElementById('step' + currentStep).classList.add('hidden');
+            document.getElementById('step' + currentStep + 'Indicator').classList.remove('active');
+            document.getElementById('step' + currentStep + 'Indicator').classList.add('completed');
+            
+            // Show next step
+            currentStep = step;
+            document.getElementById('step' + currentStep).classList.remove('hidden');
+            document.getElementById('step' + currentStep + 'Indicator').classList.add('active');
+        }
+
+        function previousStep(step) {
+            // Hide current step
+            document.getElementById('step' + currentStep).classList.add('hidden');
+            document.getElementById('step' + currentStep + 'Indicator').classList.remove('active');
+            
+            // Show previous step
+            currentStep = step;
+            document.getElementById('step' + currentStep).classList.remove('hidden');
+            document.getElementById('step' + currentStep + 'Indicator').classList.add('active');
+            document.getElementById('step' + currentStep + 'Indicator').classList.remove('completed');
+        }
+
+        function updateReview() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const accountType = document.getElementById('accountType').value;
+            
+            document.getElementById('reviewName').textContent = firstName + ' ' + lastName;
+            document.getElementById('reviewEmail').textContent = email;
+            document.getElementById('reviewPhone').textContent = phone;
+            document.getElementById('reviewType').textContent = accountType === 'jobseeker' ? 'Pencari Kerja' : 'Perusahaan';
+        }
+
+        // Password Toggle
+        function togglePassword(inputId, iconId) {
+            const passwordInput = document.getElementById(inputId);
+            const toggleIcon = document.getElementById(iconId);
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+
+        // Password Strength Checker
+        function checkPasswordStrength() {
+            const password = document.getElementById('password').value;
+            const strengthBar = document.getElementById('strengthBar');
+            const strengthText = document.getElementById('strengthText');
+            
+            let strength = 0;
+            
+            if (password.length >= 8) strength++;
+            if (password.match(/[a-z]/)) strength++;
+            if (password.match(/[A-Z]/)) strength++;
+            if (password.match(/[0-9]/)) strength++;
+            if (password.match(/[^a-zA-Z0-9]/)) strength++;
+            
+            strengthBar.className = 'password-strength-bar';
+            
+            if (strength <= 2) {
+                strengthBar.classList.add('strength-weak');
+                strengthText.textContent = 'Password lemah';
+                strengthText.className = 'text-xs mt-1 text-red-600';
+            } else if (strength <= 4) {
+                strengthBar.classList.add('strength-medium');
+                strengthText.textContent = 'Password sedang';
+                strengthText.className = 'text-xs mt-1 text-yellow-600';
+            } else {
+                strengthBar.classList.add('strength-strong');
+                strengthText.textContent = 'Password kuat';
+                strengthText.className = 'text-xs mt-1 text-green-600';
+            }
+        }
+
+        // Microsoft Sign Up
+        function handleMicrosoftSignUp() {
+            document.getElementById('msSignUpModal').classList.remove('hidden');
+        }
+
+        function closeMsSignUpModal() {
+            document.getElementById('msSignUpModal').classList.add('hidden');
+        }
+
+        function proceedMsSignUp() {
+            closeMsSignUpModal();
+            alert('✅ Mengarahkan ke Microsoft 365 Sign-In...\n\n(Ini adalah simulasi flow. Dalam implementasi nyata, akan redirect ke Microsoft OAuth)');
+            
+            // Simulate successful registration
+            setTimeout(() => {
+                showSuccessModal();
+            }, 1500);
+        }
+
+        // Form Submit
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const termsCheck = document.getElementById('termsCheck').checked;
+            
+            if (!termsCheck) {
+                alert('Anda harus menyetujui Syarat & Ketentuan untuk melanjutkan');
+                return;
+            }
+            
+            // Show success modal
+            showSuccessModal();
+        });
+
+        function showSuccessModal() {
+            document.getElementById('successModal').classList.remove('hidden');
+        }
+
+        function goToLogin() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

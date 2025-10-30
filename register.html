@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - CarierPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="h-8 w-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">P</span>
+                    </div>
+                    <span class="text-xl font-bold text-indigo-600">CarierPro</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600">Beranda</a>
+                    <a href="lowongan.html" class="text-gray-600 hover:text-indigo-600">Lowongan Kerja</a>
+                    <a href="perusahaan.html" class="text-gray-600 hover:text-indigo-600">Perusahaan</a>
+                </div>
+                <div class="hidden md:flex space-x-2">
+                    <a href="login.html" class="px-4 py-2 text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50">Masuk</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Pilih Jenis Akun</h1>
+            <p class="text-indigo-100 text-lg">Daftar sebagai pencari kerja atau perusahaan</p>
+        </div>
+    </section>
+
+    <!-- Account Type Selection -->
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <!-- Pencari Kerja Option -->
+            <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-transparent hover:border-indigo-600 transition cursor-pointer group" onclick="selectAccountType('seeker')">
+                <div class="text-indigo-600 text-5xl mb-4 group-hover:scale-110 transition">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">Pencari Kerja</h2>
+                <p class="text-gray-600 mb-6">Cari lowongan kerja yang sesuai dengan kemampuan dan impian Anda</p>
+                <ul class="space-y-2 text-gray-600 mb-8">
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Akses ke ribuan lowongan kerja</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Upload CV dan lamaran</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Notifikasi lowongan otomatis</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Gratis selamanya</li>
+                </ul>
+                <a href="daftar.html" class="w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition block text-center">
+                    Daftar Sebagai Pencari Kerja
+                </a>
+            </div>
+
+            <!-- Perusahaan Option -->
+            <div class="bg-white p-8 rounded-lg shadow-lg border-2 border-transparent hover:border-purple-600 transition cursor-pointer group" onclick="selectAccountType('company')">
+                <div class="text-purple-600 text-5xl mb-4 group-hover:scale-110 transition">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-3">Perusahaan</h2>
+                <p class="text-gray-600 mb-6">Temukan talent terbaik untuk mengembangkan bisnis Anda</p>
+                <ul class="space-y-2 text-gray-600 mb-8">
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Dashboard rekrutmen lengkap</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Posting lowongan unlimited</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Akses ke database pencari kerja</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Laporan dan statistik rekrutmen</li>
+                </ul>
+                <a href="#" class="w-full py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition block text-center">
+                    Daftar Sebagai Perusahaan
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Comparison -->
+    <section class="bg-gray-50 py-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Fitur Unggulan</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Pencarian Mudah</h3>
+                    <p class="text-gray-600 text-sm">Filter lowongan berdasarkan posisi, lokasi, gaji, dan kategori untuk menemukan yang paling sesuai</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-file-upload"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Upload CV Mudah</h3>
+                    <p class="text-gray-600 text-sm">Upload CV dalam format PDF atau Word dan gunakan untuk semua lamaran Anda dengan sekali klik</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Notifikasi Email</h3>
+                    <p class="text-gray-600 text-sm">Dapatkan notifikasi otomatis ketika ada lowongan baru yang cocok dengan profil Anda</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Dashboard HR</h3>
+                    <p class="text-gray-600 text-sm">Kelola semua pelamar, track status lamaran, dan lakukan follow-up dari satu dashboard</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Statistik Rekrutmen</h3>
+                    <p class="text-gray-600 text-sm">Lihat analytics lengkap tentang proses rekrutmen dan kinerja setiap lowongan</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white p-6 rounded-lg shadow text-center">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Akses Role-Based</h3>
+                    <p class="text-gray-600 text-sm">Kontrol akses berbasis peran untuk menjaga keamanan data dan privasi pengguna</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-12 text-center">Pertanyaan Umum</h2>
+            <div class="space-y-4">
+                <details class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+                    <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center">
+                        Apakah pendaftaran gratis?
+                        <i class="fas fa-chevron-down text-gray-600"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600">Ya, pendaftaran akun pencari kerja di CarierPro sepenuhnya gratis. Untuk perusahaan, kami menawarkan paket berlangganan dengan berbagai fitur premium.</p>
+                </details>
+
+                <details class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+                    <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center">
+                        Berapa lama proses verifikasi akun?
+                        <i class="fas fa-chevron-down text-gray-600"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600">Proses verifikasi biasanya hanya membutuhkan waktu 5-10 menit. Anda akan menerima email konfirmasi untuk memverifikasi alamat email Anda.</p>
+                </details>
+
+                <details class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+                    <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center">
+                        Bagaimana cara mengganti informasi akun?
+                        <i class="fas fa-chevron-down text-gray-600"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600">Anda dapat mengedit informasi akun kapan saja melalui pengaturan profil. Beberapa informasi mungkin memerlukan verifikasi ulang untuk alasan keamanan.</p>
+                </details>
+
+                <details class="bg-white p-6 rounded-lg shadow hover:shadow-md transition">
+                    <summary class="cursor-pointer font-semibold text-gray-900 flex justify-between items-center">
+                        Apakah data saya aman?
+                        <i class="fas fa-chevron-down text-gray-600"></i>
+                    </summary>
+                    <p class="mt-4 text-gray-600">Ya, kami menggunakan enkripsi SSL/TLS dan standar keamanan internasional untuk melindungi data Anda. Privasi Anda adalah prioritas utama kami.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Siap Memulai?</h2>
+            <p class="text-indigo-100 mb-8 text-lg">Bergabunglah dengan ribuan pengguna yang telah menemukan kesuksesan melalui CarierPro</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="daftar.html" class="px-8 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100">Daftar Sebagai Pencari Kerja</a>
+                <a href="#" class="px-8 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-indigo-600">Daftar Sebagai Perusahaan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold mb-4">CarierPro</h4>
+                    <p class="text-sm">Platform terpercaya untuk mencari dan menempatkan talent terbaik di Indonesia.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">Beranda</a></li>
+                        <li><a href="lowongan.html" class="hover:text-white">Lowongan Kerja</a></li>
+                        <li><a href="perusahaan.html" class="hover:text-white">Perusahaan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="faq.html" class="hover:text-white">FAQ & Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Hubungi Kami</a></li>
+                        <li><a href="#" class="hover:text-white">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; 2025 CarierPro. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

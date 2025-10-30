@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Perusahaan - CarierPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="h-8 w-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">P</span>
+                    </div>
+                    <span class="text-xl font-bold text-indigo-600">CarierPro</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600">Beranda</a>
+                    <a href="lowongan.html" class="text-gray-600 hover:text-indigo-600">Lowongan Kerja</a>
+                    <a href="perusahaan.html" class="text-indigo-600 font-semibold hover:text-indigo-800">Perusahaan</a>
+                    <a href="daftar.html" class="text-gray-600 hover:text-indigo-600">Daftar</a>
+                    <a href="faq.html" class="text-gray-600 hover:text-indigo-600">FAQ</a>
+                </div>
+                <div class="hidden md:flex space-x-2">
+                    <a href="login.html" class="px-4 py-2 text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50">Masuk</a>
+                    <a href="register.html" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="bg-white border-b border-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Daftar Perusahaan Partner</h1>
+            <p class="text-gray-600">Jelajahi perusahaan-perusahaan terkemuka yang membuka lowongan kerja</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Search -->
+        <div class="mb-8">
+            <input type="text" placeholder="Cari perusahaan..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-600">
+        </div>
+
+        <!-- Company Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Company Card 1 -->
+            <div class="card-hover bg-white p-6 rounded-lg shadow border-t-4 border-indigo-600">
+                <div class="mb-4">
+                    <img src="https://placehold.co/400x225/667eea/ffffff?text=Tech+Indonesia" alt="Company" class="w-full h-auto aspect-video object-cover rounded-lg">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">PT. Teknologi Indonesia</h3>
+                <p class="text-gray-600 text-sm mb-4">Perusahaan teknologi terkemuka yang berfokus pada software development dan digital transformation solutions.</p>
+                <div class="space-y-2 mb-4 text-sm">
+                    <p class="text-gray-600"><i class="fas fa-map-marker-alt text-indigo-600"></i> Jakarta, Indonesia</p>
+                    <p class="text-gray-600"><i class="fas fa-users text-indigo-600"></i> 500+ Karyawan</p>
+                    <p class="text-gray-600"><i class="fas fa-briefcase text-indigo-600"></i> IT & Software</p>
+                </div>
+                <div class="mb-4 pb-4 border-b border-gray-200">
+                    <p class="text-xs font-semibold text-gray-700">Lowongan Terbuka: <span class="text-indigo-600 font-bold">12</span></p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="flex-1 px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 text-sm">Profil</button>
+                    <button class="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 text-sm">Lihat Lowongan</button>
+                </div>
+            </div>
+
+            <!-- Company Card 2 -->
+            <div class="card-hover bg-white p-6 rounded-lg shadow border-t-4 border-green-600">
+                <div class="mb-4">
+                    <img src="https://placehold.co/400x225/10b981/ffffff?text=Finance+Digital" alt="Company" class="w-full h-auto aspect-video object-cover rounded-lg">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">PT. Finansial Digital</h3>
+                <p class="text-gray-600 text-sm mb-4">Startup fintech yang menyediakan solusi pembayaran digital dan platform investasi untuk masyarakat Indonesia.</p>
+                <div class="space-y-2 mb-4 text-sm">
+                    <p class="text-gray-600"><i class="fas fa-map-marker-alt text-indigo-600"></i> Bandung, Indonesia</p>
+                    <p class="text-gray-600"><i class="fas fa-users text-indigo-600"></i> 200+ Karyawan</p>
+                    <p class="text-gray-600"><i class="fas fa-briefcase text-indigo-600"></i> Finance & Banking</p>
+                </div>
+                <div class="mb-4 pb-4 border-b border-gray-200">
+                    <p class="text-xs font-semibold text-gray-700">Lowongan Terbuka: <span class="text-indigo-600 font-bold">8</span></p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="flex-1 px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 text-sm">Profil</button>
+                    <button class="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 text-sm">Lihat Lowongan</button>
+                </div>
+            </div>
+
+            <!-- Company Card 3 -->
+            <div class="card-hover bg-white p-6 rounded-lg shadow border-t-4 border-purple-600">
+                <div class="mb-4">
+                    <img src="https://placehold.co/400x225/a855f7/ffffff?text=SDM+Manusia" alt="Company" class="w-full h-auto aspect-video object-cover rounded-lg">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">PT. Sumber Daya Manusia</h3>
+                <p class="text-gray-600 text-sm mb-4">Konsultan HR profesional yang memberikan solusi recruitment, training, dan pengembangan talent di seluruh Indonesia.</p>
+                <div class="space-y-2 mb-4 text-sm">
+                    <p class="text-gray-600"><i class="fas fa-map-marker-alt text-indigo-600"></i> Surabaya, Indonesia</p>
+                    <p class="text-gray-600"><i class="fas fa-users text-indigo-600"></i> 150+ Karyawan</p>
+                    <p class="text-gray-600"><i class="fas fa-briefcase text-indigo-600"></i> HR & Consulting</p>
+                </div>
+                <div class="mb-4 pb-4 border-b border-gray-200">
+                    <p class="text-xs font-semibold text-gray-700">Lowongan Terbuka: <span class="text-indigo-600 font-bold">5</span></p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="flex-1 px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 text-sm">Profil</button>
+                    <button class="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 text-sm">Lihat Lowongan</button>
+                </div>
+            </div>
+
+            <!-- Company Card 4 -->
+            <div class="card-hover bg-white p-6 rounded-lg shadow border-t-4 border-blue-600">
+                <div class="mb-4">
+                    <img src="https://placehold.co/400x225/3b82f6/ffffff?text=Creative+Digital" alt="Company" class="w-full h-auto aspect-video object-cover rounded-lg">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">PT. Digital Creative</h3>
+                <p class="text-gray-600 text-sm mb-4">Agensi digital kreatif yang mengerjakan branding, web design, dan digital marketing untuk klien korporat.</p>
+                <div class="space-y-2 mb-4 text-sm">
+                    <p class="text-gray-600"><i class="fas fa-map-marker-alt text-indigo-600"></i> Jakarta, Indonesia</p>
+                    <p class="text-gray-600"><i class="fas fa-users text-indigo-600"></i> 120+ Karyawan</p>
+                    <p class="text-gray-600"><i class="fas fa-briefcase text-indigo-600"></i> Creative & Design</p>
+                </div>
+                <div class="mb-4 pb-4 border-b border-gray-200">
+                    <p class="text-xs font-semibold text-gray-700">Lowongan Terbuka: <span class="text-indigo-600 font-bold">6</span></p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="flex-1 px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 text-sm">Profil</button>
+                    <button class="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 text-sm">Lihat Lowongan</button>
+                </div>
+            </div>
+
+            <!-- Company Card 5 -->
+            <div class="card-hover bg-white p-6 rounded-lg shadow border-t-4 border-red-600">
+                <div class="mb-4">
+                    <img src="https://placehold.co/400x225/ef4444/ffffff?text=Retail+Plus" alt="Company" class="w-full h-auto aspect-video object-cover rounded-lg">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">PT. Retail Plus Indonesia</h3>
+                <p class="text-gray-600 text-sm mb-4">Perusahaan retail terbesar di Indonesia dengan jaringan toko di lebih dari 50 kota dan terus berkembang.</p>
+                <div class="space-y-2 mb-4 text-sm">
+                    <p class="text-gray-600"><i class="fas fa-map-marker-alt text-indigo-600"></i> Medan, Indonesia</p>
+                    <p class="text-gray-600"><i class="fas fa-users text-indigo-600"></i> 2000+ Karyawan</p>
+                    <p class="text-gray-600"><i class="fas fa-briefcase text-indigo-600"></i> Retail & Commerce</p>
+                </div>
+                <div class="mb-4 pb-4 border-b border-gray-200">
+                    <p class="text-xs font-semibold text-gray-700">Lowongan Terbuka: <span class="text-indigo-600 font-bold">25</span></p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="flex-1 px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 text-sm">Profil</button>
+                    <button class="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 text-sm">Lihat Lowongan</button>
+                </div>
+            </div>
+
+            <!-- Company Card 6 -->
+            <div class="card-hover bg-white p-6 rounded-lg shadow border-t-4 border-yellow-600">
+                <div class="mb-4">
+                    <img src="https://placehold.co/400x225/eab308/ffffff?text=Logistik+Sejaya" alt="Company" class="w-full h-auto aspect-video object-cover rounded-lg">
+                </div>
+                <h3 class="text-lg font-bold text-gray-900 mb-2">PT. Logistik Sejaya</h3>
+                <p class="text-gray-600 text-sm mb-4">Perusahaan logistik dan pengiriman terpercaya dengan jaringan distribusi di seluruh nusantara yang modern.</p>
+                <div class="space-y-2 mb-4 text-sm">
+                    <p class="text-gray-600"><i class="fas fa-map-marker-alt text-indigo-600"></i> Surabaya, Indonesia</p>
+                    <p class="text-gray-600"><i class="fas fa-users text-indigo-600"></i> 800+ Karyawan</p>
+                    <p class="text-gray-600"><i class="fas fa-briefcase text-indigo-600"></i> Logistik & Transport</p>
+                </div>
+                <div class="mb-4 pb-4 border-b border-gray-200">
+                    <p class="text-xs font-semibold text-gray-700">Lowongan Terbuka: <span class="text-indigo-600 font-bold">15</span></p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="flex-1 px-4 py-2 border border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 text-sm">Profil</button>
+                    <button class="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 text-sm">Lihat Lowongan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="bg-indigo-600 text-white py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Perusahaan Anda Mencari Talent?</h2>
+            <p class="text-indigo-100 mb-6">Bergabunglah dengan ribuan perusahaan yang telah merekrut talent terbaik melalui platform CarierPro</p>
+            <a href="#" class="inline-block px-8 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100">Daftar Sebagai Perusahaan</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold mb-4">CarierPro</h4>
+                    <p class="text-sm">Platform terpercaya untuk mencari dan menempatkan talent terbaik di Indonesia.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">Beranda</a></li>
+                        <li><a href="lowongan.html" class="hover:text-white">Lowongan Kerja</a></li>
+                        <li><a href="perusahaan.html" class="hover:text-white">Perusahaan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="faq.html" class="hover:text-white">FAQ & Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Hubungi Kami</a></li>
+                        <li><a href="#" class="hover:text-white">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; 2025 CarierPro. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

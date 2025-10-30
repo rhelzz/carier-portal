@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarierPro - Portal Karir & Lowongan Kerja</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="h-8 w-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">P</span>
+                    </div>
+                    <span class="text-xl font-bold text-indigo-600">CarierPro</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-indigo-600 font-semibold hover:text-indigo-800">Beranda</a>
+                    <a href="lowongan.html" class="text-gray-600 hover:text-indigo-600">Lowongan Kerja</a>
+                    <a href="perusahaan.html" class="text-gray-600 hover:text-indigo-600">Perusahaan</a>
+                    <a href="daftar.html" class="text-gray-600 hover:text-indigo-600">Daftar</a>
+                    <a href="faq.html" class="text-gray-600 hover:text-indigo-600">FAQ</a>
+                </div>
+                <div class="hidden md:flex space-x-2">
+                    <a href="login.html" class="px-4 py-2 text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50">Masuk</a>
+                    <a href="register.html" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">Temukan Karir Impian Anda</h1>
+                    <p class="text-lg text-indigo-100 mb-8">CarierPro adalah platform portal karir terpercaya dengan ribuan lowongan kerja dari perusahaan terkemuka di Indonesia.</p>
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                        <a href="lowongan.html" class="px-6 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100 text-center">Jelajahi Lowongan</a>
+                        <a href="daftar.html" class="px-6 py-3 border-2 border-white text-white rounded-lg font-semibold hover:bg-white hover:text-indigo-600 text-center">Daftar Sekarang</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://placehold.co/500x400/667eea/ffffff?text=Karir+Impian" alt="Career" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">12,500+</div>
+                    <p class="text-gray-600">Lowongan Kerja Aktif</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">5,200+</div>
+                    <p class="text-gray-600">Perusahaan Partner</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">85,000+</div>
+                    <p class="text-gray-600">Pencari Kerja Terdaftar</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2">15,000+</div>
+                    <p class="text-gray-600">Penempatan Sukses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Fitur Unggulan Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Platform kami menyediakan solusi lengkap untuk mencari dan mengelola lowongan kerja</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="card-hover bg-white p-8 rounded-lg shadow">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Pencarian Mudah</h3>
+                    <p class="text-gray-600">Cari lowongan kerja berdasarkan posisi, lokasi, atau divisi dengan filter yang komprehensif</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="card-hover bg-white p-8 rounded-lg shadow">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-file-upload"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Upload CV Mudah</h3>
+                    <p class="text-gray-600">Upload CV dan lamaran secara otomatis ke dalam sistem untuk kemudahan penempatan</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="card-hover bg-white p-8 rounded-lg shadow">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Notifikasi Email</h3>
+                    <p class="text-gray-600">Dapatkan notifikasi email otomatis saat ada lamaran yang cocok dengan profil Anda</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="card-hover bg-white p-8 rounded-lg shadow">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Dashboard HR</h3>
+                    <p class="text-gray-600">Kelola semua informasi pelamar dalam satu dashboard yang mudah digunakan</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="card-hover bg-white p-8 rounded-lg shadow">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Statistik Rekrutmen</h3>
+                    <p class="text-gray-600">Pantau status rekrutmen, statistik aplikasi, dan laporan pelamaran secara real-time</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="card-hover bg-white p-8 rounded-lg shadow">
+                    <div class="text-indigo-600 text-4xl mb-4">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Akses Role-Based</h3>
+                    <p class="text-gray-600">Pelamar hanya bisa melihat inilisial lowongan, form, dan akses pelamar terbatas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Job Listings -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Lowongan Terbaru</h2>
+                <a href="lowongan.html" class="text-indigo-600 hover:text-indigo-800 font-semibold">Lihat Semua →</a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Job Card 1 -->
+                <div class="card-hover bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Software Engineer</h3>
+                            <p class="text-gray-600 text-sm">PT. Teknologi Indonesia</p>
+                        </div>
+                        <span class="pulse-dot bg-green-500 w-3 h-3 rounded-full"></span>
+                    </div>
+                    <div class="space-y-2 mb-4">
+                        <p class="text-sm text-gray-600"><i class="fas fa-map-marker-alt text-indigo-600"></i> Jakarta, Indonesia</p>
+                        <p class="text-sm text-gray-600"><i class="fas fa-briefcase text-indigo-600"></i> Full-time</p>
+                        <p class="text-sm text-gray-600"><i class="fas fa-money-bill text-indigo-600"></i> Rp 8 - 12 Juta/bulan</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Kami mencari Software Engineer berpengalaman dengan keahlian React dan Node.js untuk bergabung dengan tim kami...</p>
+                    <a href="lowongan.html" class="text-indigo-600 font-semibold text-sm hover:text-indigo-800">Lihat Detail →</a>
+                </div>
+
+                <!-- Job Card 2 -->
+                <div class="card-hover bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">Data Analyst</h3>
+                            <p class="text-gray-600 text-sm">PT. Finansial Digital</p>
+                        </div>
+                        <span class="pulse-dot bg-green-500 w-3 h-3 rounded-full"></span>
+                    </div>
+                    <div class="space-y-2 mb-4">
+                        <p class="text-sm text-gray-600"><i class="fas fa-map-marker-alt text-indigo-600"></i> Bandung, Indonesia</p>
+                        <p class="text-sm text-gray-600"><i class="fas fa-briefcase text-indigo-600"></i> Full-time</p>
+                        <p class="text-sm text-gray-600"><i class="fas fa-money-bill text-indigo-600"></i> Rp 6 - 9 Juta/bulan</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Posisi Data Analyst yang sedang dibuka dengan detail (deskripsi), kualifikasi, lokasi, dan deadline...</p>
+                    <a href="lowongan.html" class="text-indigo-600 font-semibold text-sm hover:text-indigo-800">Lihat Detail →</a>
+                </div>
+
+                <!-- Job Card 3 -->
+                <div class="card-hover bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <div class="flex items-start justify-between mb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900">HR Manager</h3>
+                            <p class="text-gray-600 text-sm">PT. Sumber Daya Manusia</p>
+                        </div>
+                        <span class="pulse-dot bg-green-500 w-3 h-3 rounded-full"></span>
+                    </div>
+                    <div class="space-y-2 mb-4">
+                        <p class="text-sm text-gray-600"><i class="fas fa-map-marker-alt text-indigo-600"></i> Surabaya, Indonesia</p>
+                        <p class="text-sm text-gray-600"><i class="fas fa-briefcase text-indigo-600"></i> Full-time</p>
+                        <p class="text-sm text-gray-600"><i class="fas fa-money-bill text-indigo-600"></i> Rp 7 - 10 Juta/bulan</p>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Kami mencari HR Manager untuk mengelola daftar pelamar, status lamaran, dan melakukan follow-up...</p>
+                    <a href="lowongan.html" class="text-indigo-600 font-semibold text-sm hover:text-indigo-800">Lihat Detail →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="hero-gradient text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Siap untuk Memulai Karir Baru?</h2>
+            <p class="text-lg text-indigo-100 mb-8">Bergabunglah dengan ribuan pencari kerja yang telah menemukan pekerjaan impian mereka melalui CarierPro</p>
+            <a href="daftar.html" class="inline-block px-8 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-gray-100">Daftar Gratis Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold mb-4">CarierPro</h4>
+                    <p class="text-sm">Platform terpercaya untuk mencari dan menempatkan talent terbaik di Indonesia.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">Beranda</a></li>
+                        <li><a href="lowongan.html" class="hover:text-white">Lowongan Kerja</a></li>
+                        <li><a href="perusahaan.html" class="hover:text-white">Perusahaan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="faq.html" class="hover:text-white">FAQ & Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Hubungi Kami</a></li>
+                        <li><a href="#" class="hover:text-white">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; 2025 CarierPro. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

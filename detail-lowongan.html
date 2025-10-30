@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Lowongan - CarierPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <div class="h-8 w-8 bg-indigo-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">P</span>
+                    </div>
+                    <span class="text-xl font-bold text-indigo-600">CarierPro</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-indigo-600">Beranda</a>
+                    <a href="lowongan.html" class="text-indigo-600 font-semibold hover:text-indigo-800">Lowongan Kerja</a>
+                    <a href="perusahaan.html" class="text-gray-600 hover:text-indigo-600">Perusahaan</a>
+                    <a href="daftar.html" class="text-gray-600 hover:text-indigo-600">Daftar</a>
+                    <a href="faq.html" class="text-gray-600 hover:text-indigo-600">FAQ</a>
+                </div>
+                <div class="hidden md:flex space-x-2">
+                    <a href="login.html" class="px-4 py-2 text-indigo-600 border border-indigo-600 rounded-lg hover:bg-indigo-50">Masuk</a>
+                    <a href="register.html" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="text-gray-600 text-sm">
+            <a href="index.html" class="text-indigo-600 hover:text-indigo-800">Beranda</a>
+            <span class="mx-2">/</span>
+            <a href="lowongan.html" class="text-indigo-600 hover:text-indigo-800">Lowongan Kerja</a>
+            <span class="mx-2">/</span>
+            <span>Detail Lowongan</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="md:col-span-2">
+                <!-- Header -->
+                <div class="bg-white p-8 rounded-lg shadow mb-6">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h1 class="text-3xl font-bold text-gray-900 mb-2">Senior Software Engineer</h1>
+                            <p class="text-gray-600 text-lg">PT. Teknologi Indonesia</p>
+                        </div>
+                        <span class="px-4 py-2 bg-green-100 text-green-800 font-semibold rounded-full">Aktif</span>
+                    </div>
+
+                    <!-- Quick Info -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-t border-b border-gray-200">
+                        <div>
+                            <p class="text-gray-600 text-sm"><i class="fas fa-map-marker-alt text-indigo-600"></i> Lokasi</p>
+                            <p class="font-semibold text-gray-900">Jakarta, Indonesia</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 text-sm"><i class="fas fa-briefcase text-indigo-600"></i> Tipe</p>
+                            <p class="font-semibold text-gray-900">Full-time</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 text-sm"><i class="fas fa-money-bill text-indigo-600"></i> Gaji</p>
+                            <p class="font-semibold text-gray-900">Rp 10 - 15 Juta</p>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 text-sm"><i class="fas fa-calendar text-indigo-600"></i> Deadline</p>
+                            <p class="font-semibold text-gray-900">31 Des 2025</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Description -->
+                <div class="bg-white p-8 rounded-lg shadow mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Deskripsi Pekerjaan</h2>
+                    <p class="text-gray-600 mb-4">Kami mencari Senior Software Engineer dengan pengalaman minimal 5 tahun di bidang backend development. Kandidat harus memiliki pengetahuan mendalam tentang sistem terdistribusi, microservices architecture, dan best practices dalam software engineering.</p>
+                    <p class="text-gray-600 mb-4">Sebagai bagian dari tim engineering kami, Anda akan bertanggung jawab untuk:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600 mb-4">
+                        <li>Mengembangkan dan memelihara aplikasi backend yang scalable</li>
+                        <li>Melakukan code review dan mentoring untuk junior engineers</li>
+                        <li>Merancang dan mengimplementasikan solusi teknis yang robust</li>
+                        <li>Berkolaborasi dengan tim product dan design untuk menghasilkan produk berkualitas</li>
+                        <li>Melakukan optimization dan performance tuning pada sistem yang ada</li>
+                    </ul>
+                </div>
+
+                <!-- Requirements -->
+                <div class="bg-white p-8 rounded-lg shadow mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Kualifikasi</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-2">Persyaratan Wajib:</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-600">
+                                <li>Pengalaman minimal 5 tahun di backend development</li>
+                                <li>Mahir menggunakan Node.js, Python, atau Java</li>
+                                <li>Pemahaman mendalam tentang SQL dan NoSQL databases</li>
+                                <li>Familiar dengan Git dan version control system</li>
+                                <li>Pengalaman bekerja dengan microservices dan API development</li>
+                                <li>Kemampuan communication dan teamwork yang baik</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-2">Keahlian yang Diharapkan:</h3>
+                            <ul class="list-disc list-inside space-y-1 text-gray-600">
+                                <li>Pengalaman dengan Docker dan Kubernetes</li>
+                                <li>Knowledge tentang AWS atau cloud services lainnya</li>
+                                <li>Familiar dengan CI/CD pipeline dan DevOps practices</li>
+                                <li>Pengalaman dengan React.js atau frontend frameworks lainnya</li>
+                                <li>Pemahaman tentang system design dan scalability</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Benefits -->
+                <div class="bg-white p-8 rounded-lg shadow mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Benefit & Fasilitas</h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900">Gaji Kompetitif</p>
+                                <p class="text-gray-600 text-sm">Sesuai dengan pengalaman dan kemampuan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900">Asuransi Kesehatan</p>
+                                <p class="text-gray-600 text-sm">Untuk Anda dan keluarga</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900">Flexible Working Hours</p>
+                                <p class="text-gray-600 text-sm">Work-life balance yang sehat</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900">Training & Development</p>
+                                <p class="text-gray-600 text-sm">Program pembelajaran berkelanjutan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900">Performance Bonus</p>
+                                <p class="text-gray-600 text-sm">Berdasarkan KPI dan pencapaian</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900">Tunjangan THR</p>
+                                <p class="text-gray-600 text-sm">Sesuai dengan peraturan yang berlaku</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Required -->
+                <div class="bg-white p-8 rounded-lg shadow mb-6">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-4">Skill yang Dibutuhkan</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm font-semibold rounded-full">React.js</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm font-semibold rounded-full">Node.js</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm font-semibold rounded-full">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm font-semibold rounded-full">MongoDB</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm font-semibold rounded-full">Docker</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm font-semibold rounded-full">AWS</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm font-semibold rounded-full">API REST</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 text-sm font-semibold rounded-full">Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="md:col-span-1">
+                <!-- Company Card -->
+                <div class="bg-white p-6 rounded-lg shadow mb-6">
+                    <img src="https://placehold.co/300x150/667eea/ffffff?text=PT+Teknologi+Indonesia" alt="Company" class="w-full h-32 object-cover rounded-lg mb-4">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">PT. Teknologi Indonesia</h3>
+                    <p class="text-gray-600 text-sm mb-4">Perusahaan teknologi terkemuka yang fokus pada software development dan digital transformation solutions.</p>
+                    <div class="space-y-2 text-sm text-gray-600 mb-4">
+                        <p><i class="fas fa-users text-indigo-600"></i> 500+ Karyawan</p>
+                        <p><i class="fas fa-globe text-indigo-600"></i> www.tekindo.com</p>
+                        <p><i class="fas fa-briefcase text-indigo-600"></i> IT & Software</p>
+                    </div>
+                    <div class="mb-4 pb-4 border-b border-gray-200">
+                        <p class="text-xs font-semibold text-gray-700">Lowongan Terbuka: <span class="text-indigo-600 font-bold">12</span></p>
+                    </div>
+                    <a href="perusahaan.html" class="w-full py-2 text-center text-indigo-600 border border-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 text-sm block">
+                        Lihat Profil Perusahaan
+                    </a>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="space-y-3 mb-6">
+                    <button class="w-full py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition">
+                        <i class="fas fa-paper-plane mr-2"></i> Lamar Sekarang
+                    </button>
+                    <button class="w-full py-3 border-2 border-indigo-600 text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 transition">
+                        <i class="fas fa-heart mr-2"></i> Simpan Lowongan
+                    </button>
+                </div>
+
+                <!-- Share -->
+                <div class="bg-white p-6 rounded-lg shadow mb-6">
+                    <h3 class="font-bold text-gray-900 mb-4">Bagikan Lowongan</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg text-gray-600 hover:text-indigo-600">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                        <a href="#" class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg text-gray-600 hover:text-indigo-600">
+                            <i class="fab fa-twitter"></i> Twitter
+                        </a>
+                        <a href="#" class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg text-gray-600 hover:text-indigo-600">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="#" class="flex items-center gap-3 p-2 hover:bg-gray-50 rounded-lg text-gray-600 hover:text-indigo-600">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Report -->
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <p class="text-gray-600 text-sm mb-3">Ada sesuatu yang tidak tepat dengan lowongan ini?</p>
+                    <button class="w-full py-2 text-center border border-gray-300 text-gray-600 rounded-lg font-semibold hover:bg-gray-50 text-sm">
+                        <i class="fas fa-flag mr-2"></i> Laporkan
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Jobs -->
+        <div class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Lowongan Serupa Lainnya</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Related Job 1 -->
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition border-l-4 border-indigo-600">
+                    <h3 class="font-bold text-gray-900 mb-1">Frontend Engineer</h3>
+                    <p class="text-gray-600 text-sm mb-4">PT. Teknologi Indonesia</p>
+                    <p class="text-gray-600 text-sm mb-4">React.js | Jakarta | Rp 8-12 Juta</p>
+                    <a href="detail-lowongan.html" class="text-indigo-600 font-semibold text-sm hover:text-indigo-800">Lihat Detail →</a>
+                </div>
+
+                <!-- Related Job 2 -->
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition border-l-4 border-indigo-600">
+                    <h3 class="font-bold text-gray-900 mb-1">DevOps Engineer</h3>
+                    <p class="text-gray-600 text-sm mb-4">PT. Teknologi Indonesia</p>
+                    <p class="text-gray-600 text-sm mb-4">Docker | Jakarta | Rp 9-13 Juta</p>
+                    <a href="detail-lowongan.html" class="text-indigo-600 font-semibold text-sm hover:text-indigo-800">Lihat Detail →</a>
+                </div>
+
+                <!-- Related Job 3 -->
+                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition border-l-4 border-indigo-600">
+                    <h3 class="font-bold text-gray-900 mb-1">Database Administrator</h3>
+                    <p class="text-gray-600 text-sm mb-4">PT. Teknologi Indonesia</p>
+                    <p class="text-gray-600 text-sm mb-4">PostgreSQL | Jakarta | Rp 7-11 Juta</p>
+                    <a href="detail-lowongan.html" class="text-indigo-600 font-semibold text-sm hover:text-indigo-800">Lihat Detail →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold mb-4">CarierPro</h4>
+                    <p class="text-sm">Platform terpercaya untuk mencari dan menempatkan talent terbaik di Indonesia.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">Beranda</a></li>
+                        <li><a href="lowongan.html" class="hover:text-white">Lowongan Kerja</a></li>
+                        <li><a href="perusahaan.html" class="hover:text-white">Perusahaan</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="faq.html" class="hover:text-white">FAQ & Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Hubungi Kami</a></li>
+                        <li><a href="#" class="hover:text-white">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; 2025 CarierPro. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

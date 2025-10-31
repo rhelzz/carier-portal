@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Lamaran - Portal Lowongan Kerja GMP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <img src="assets/LOGO-HEADER-GMP.svg" alt="GMP Logo" class="h-8 w-auto">
+                    <span class="text-xl font-bold text-green-600">Portal Lowongan Kerja GMP</span>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="index.html" class="text-gray-600 hover:text-green-600">Beranda</a>
+                    <a href="lowongan.html" class="text-gray-600 hover:text-green-600">Lowongan Kerja</a>
+                    <a href="faq.html" class="text-gray-600 hover:text-green-600">FAQ</a>
+                </div>
+                <div class="hidden md:flex space-x-2">
+                    <a href="login.html" class="px-4 py-2 text-green-600 border border-green-600 rounded-lg hover:bg-green-50">Masuk</a>
+                    <a href="register.html" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Header -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <div class="flex justify-between items-start mb-6">
+                <a href="lowongan.html" class="text-green-600 hover:text-green-800 font-semibold">← Kembali ke Lowongan</a>
+                <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full font-semibold text-sm">Status: Menunggu Review</span>
+            </div>
+            <div class="flex items-start gap-6">
+                <div class="w-24 h-24 bg-green-100 rounded-lg flex items-center justify-center text-green-600 text-4xl">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Nama Pelamar</h1>
+                    <p class="text-gray-600 mt-1">Operations Manager - Gunung Madu Plantation</p>
+                    <div class="flex gap-6 mt-4 text-sm">
+                        <span class="text-gray-600"><i class="fas fa-envelope mr-2 text-green-600"></i>pelamar@email.com</span>
+                        <span class="text-gray-600"><i class="fas fa-phone mr-2 text-green-600"></i>082123456789</span>
+                        <span class="text-gray-600"><i class="fas fa-calendar mr-2 text-green-600"></i>Melamar: 31 Oct 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Main Content -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Data Pelamar -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">Data Lamaran Anda</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="text-sm text-gray-600 font-medium">Jenis Kelamin</p>
+                            <p class="text-gray-900 font-semibold mt-1">Laki-laki / Perempuan</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 font-medium">Tingkat Pengalaman</p>
+                            <p class="text-gray-900 font-semibold mt-1">Pengalaman Anda</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 font-medium">Posisi Pilihan</p>
+                            <p class="text-gray-900 font-semibold mt-1">Lampung</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-gray-600 font-medium">Tanggal Melamar</p>
+                            <p class="text-gray-900 font-semibold mt-1">31 Oct 2025, 10:30 AM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CV / Dokumen -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-xl font-bold text-gray-900 mb-4">CV & Dokumen</h2>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                        <i class="fas fa-file-pdf text-4xl text-red-600 mb-3"></i>
+                        <p class="text-gray-900 font-semibold">CV_Nama_Anda.pdf</p>
+                        <p class="text-sm text-gray-600 mt-1">Ukuran: 2.5 MB</p>
+                        <div class="flex gap-3 justify-center mt-4">
+                            <button class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm font-medium">
+                                <i class="fas fa-download mr-2"></i>Download CV
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Proses -->
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h2 class="text-lg font-bold text-green-900 mb-3">
+                        <i class="fas fa-info-circle mr-2"></i>Informasi Proses Lamaran
+                    </h2>
+                    <ul class="space-y-2 text-green-800 text-sm">
+                        <li>✓ Lamaran Anda telah diterima oleh tim HR</li>
+                        <li>⏳ Menunggu review awal dari tim kami</li>
+                        <li>📧 Kami akan menghubungi Anda via email/telepon untuk tahap selanjutnya</li>
+                        <li>📞 Jika ada pertanyaan, hubungi: hr@gmp.id atau (0721) 1234-5678</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Status Card -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-lg font-bold text-gray-900 mb-4">Status Lamaran</h2>
+                    
+                    <!-- Status Timeline -->
+                    <div class="space-y-4">
+                        <!-- Submitted -->
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-check text-green-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 text-sm">Lamaran Dikirim</p>
+                                <p class="text-xs text-gray-600 mt-1">31 Oct 2025, 10:30 AM</p>
+                            </div>
+                        </div>
+
+                        <!-- Separator -->
+                        <div class="ml-5 h-2 border-l-2 border-gray-300"></div>
+
+                        <!-- Under Review -->
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-hourglass-half text-orange-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 text-sm">Sedang Diulas</p>
+                                <p class="text-xs text-gray-600 mt-1">Pending</p>
+                            </div>
+                        </div>
+
+                        <!-- Separator -->
+                        <div class="ml-5 h-2 border-l-2 border-gray-300"></div>
+
+                        <!-- Interview -->
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-calendar text-gray-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 text-sm">Interview</p>
+                                <p class="text-xs text-gray-600 mt-1">Menunggu penjadwalan</p>
+                            </div>
+                        </div>
+
+                        <!-- Separator -->
+                        <div class="ml-5 h-2 border-l-2 border-gray-300"></div>
+
+                        <!-- Final Decision -->
+                        <div class="flex gap-3">
+                            <div class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-flag text-gray-400"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900 text-sm">Keputusan Akhir</p>
+                                <p class="text-xs text-gray-600 mt-1">Pending</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Next Steps -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-lg font-bold text-gray-900 mb-4">Langkah Selanjutnya</h2>
+                    <div class="space-y-3">
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">1. Tunggu Konfirmasi</span><br>
+                            Tim kami akan menghubungi dalam 3-5 hari kerja
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">2. Interview</span><br>
+                            Jika lolos, kami akan mengatur jadwal interview
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            <span class="font-semibold">3. Keputusan</span><br>
+                            Hasil akhir akan diumumkan setelah proses selesai
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="bg-white rounded-lg shadow p-6">
+                    <h2 class="text-lg font-bold text-gray-900 mb-4">Aksi</h2>
+                    <div class="space-y-2">
+                        <button class="w-full px-4 py-3 border border-green-600 text-green-600 rounded-lg hover:bg-green-50 font-medium text-sm transition">
+                            <i class="fas fa-eye mr-2"></i>Lihat Lowongan
+                        </button>
+                        <button class="w-full px-4 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium text-sm transition">
+                            <i class="fas fa-arrow-left mr-2"></i>Kembali ke Beranda
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-white font-bold mb-4">Portal Lowongan Kerja GMP</h4>
+                    <p class="text-sm">Platform terpercaya untuk mencari dan menempatkan talent terbaik di Indonesia.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Navigasi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-white">Beranda</a></li>
+                        <li><a href="lowongan.html" class="hover:text-white">Lowongan Kerja</a></li>
+                        <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Bantuan</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="faq.html" class="hover:text-white">FAQ & Panduan</a></li>
+                        <li><a href="#" class="hover:text-white">Hubungi Kami</a></li>
+                        <li><a href="#" class="hover:text-white">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; 2025 Portal Lowongan Kerja GMP. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
